@@ -1,0 +1,209 @@
+/* Base Scroll Reveal Styles */
+.scroll-reveal {
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal.is-visible {
+    opacity: 1;
+}
+
+/* Fade Up Animation */
+.scroll-reveal.fade-up {
+    transform: translateY(60px);
+}
+
+.scroll-reveal.fade-up.is-visible {
+    transform: translateY(0);
+}
+
+/* Fade Down Animation */
+.scroll-reveal.fade-down {
+    transform: translateY(-60px);
+}
+
+.scroll-reveal.fade-down.is-visible {
+    transform: translateY(0);
+}
+
+/* Fade Left Animation */
+.scroll-reveal.fade-left {
+    transform: translateX(60px);
+}
+
+.scroll-reveal.fade-left.is-visible {
+    transform: translateX(0);
+}
+
+/* Fade Right Animation */
+.scroll-reveal.fade-right {
+    transform: translateX(-60px);
+}
+
+.scroll-reveal.fade-right.is-visible {
+    transform: translateX(0);
+}
+
+/* Scale Animation */
+.scroll-reveal.scale {
+    transform: scale(0.8);
+}
+
+.scroll-reveal.scale.is-visible {
+    transform: scale(1);
+}
+
+/* Rotate In Animation */
+.scroll-reveal.rotate-in {
+    transform: rotate(-10deg) scale(0.8);
+}
+
+.scroll-reveal.rotate-in.is-visible {
+    transform: rotate(0deg) scale(1);
+}
+
+/* Flip Animation */
+.scroll-reveal.flip {
+    transform: perspective(1000px) rotateX(-90deg);
+    transform-origin: center bottom;
+}
+
+.scroll-reveal.flip.is-visible {
+    transform: perspective(1000px) rotateX(0deg);
+}
+
+/* Slide Bounce Animation */
+.scroll-reveal.bounce-in {
+    animation: none;
+}
+
+.scroll-reveal.bounce-in.is-visible {
+    animation: bounceIn 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(60px);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.05) translateY(-10px);
+    }
+
+    70% {
+        transform: scale(0.9) translateY(5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Blur Animation */
+.scroll-reveal.blur {
+    filter: blur(10px);
+    transform: translateY(40px);
+}
+
+.scroll-reveal.blur.is-visible {
+    filter: blur(0px);
+    transform: translateY(0);
+}
+
+/* Glow Animation */
+.scroll-reveal.glow {
+    filter: brightness(0.5) blur(5px);
+}
+
+.scroll-reveal.glow.is-visible {
+    filter: brightness(1) blur(0px);
+    animation: glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+
+    0%,
+    100% {
+        filter: brightness(1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+    }
+
+    50% {
+        filter: brightness(1.1) drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+    }
+}
+
+/* Slide Reveal Animation */
+.scroll-reveal.slide-reveal {
+    clip-path: inset(0 100% 0 0);
+}
+
+.scroll-reveal.slide-reveal.is-visible {
+    clip-path: inset(0 0 0 0);
+    transition: clip-path 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Stagger Children */
+.scroll-reveal.stagger>* {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal.stagger.is-visible>* {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-reveal.stagger.is-visible>*:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.scroll-reveal.stagger.is-visible>*:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.scroll-reveal.stagger.is-visible>*:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.scroll-reveal.stagger.is-visible>*:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.scroll-reveal.stagger.is-visible>*:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+.scroll-reveal.stagger.is-visible>*:nth-child(6) {
+    transition-delay: 0.6s;
+}
+
+.scroll-reveal.stagger.is-visible>*:nth-child(7) {
+    transition-delay: 0.7s;
+}
+
+.scroll-reveal.stagger.is-visible>*:nth-child(8) {
+    transition-delay: 0.8s;
+}
+
+/* Parallax Effect */
+.scroll-reveal.parallax {
+    transition: transform 0.1s linear;
+}
+
+/* Performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+    .scroll-reveal {
+        animation: none !important;
+        transition: opacity 0.3s ease !important;
+    }
+
+    .scroll-reveal.is-visible {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+    }
+}
