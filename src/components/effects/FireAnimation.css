@@ -1,0 +1,43 @@
+/* Fire Animation Wrapper Styles */
+.fire-animation-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
+}
+
+.fire-animation-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Overlay gradient for seamless integration */
+.fire-animation-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.3) 0%,
+            transparent 20%,
+            transparent 80%,
+            rgba(0, 0, 0, 0.3) 100%);
+}
+
+/* Optional: Add a subtle border effect */
+.fire-animation-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(34, 211, 238, 0.2) 50%,
+            transparent 100%);
+}

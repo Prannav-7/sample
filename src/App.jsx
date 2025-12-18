@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
+import FireAnimation from './components/effects/FireAnimation';
 import Features from './components/sections/Features';
 import TravelGallery from './components/sections/TravelGallery';
 import GlobalNetwork from './components/sections/GlobalNetwork';
 import AiProcessing from './components/sections/AiProcessing';
+import LoaderDemo from './components/sections/LoaderDemo';
 import Footer from './components/layout/Footer';
 import Background3D from './components/3d/Background3D';
 import Intro from './components/ui/Intro';
@@ -26,9 +28,11 @@ function App() {
           <Navbar />
           <main className="relative z-10 flex flex-col gap-0">
             <Hero />
+            <FireAnimation />
             <Features />
             <TravelGallery />
             <GlobalNetwork />
+            <LoaderDemo />
             <AiProcessing />
           </main>
           <Footer />

@@ -1,9 +1,16 @@
 import React from 'react';
 import './Background3D.css';
+import backgroundGif from './gipy.gif';
 
 const Background3D = () => {
   return (
     <div className="fixed inset-0 -z-20 bg-gradient-to-br from-[#0a0a0f] via-[#1a0b2e] to-[#050505]">
+      {/* Animated GIF Background */}
+      <div
+        className="animated-gif-background"
+        style={{ backgroundImage: `url(${backgroundGif})` }}
+      />
+
       {/* Subtle animated gradient overlay */}
       <div className="gradient-radial-overlay" />
 
